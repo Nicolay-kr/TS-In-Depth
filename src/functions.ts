@@ -9,4 +9,8 @@ function getObjectProperty<TObject extends object, TKey extends keyof TObject>(
     return obj[key];
 }
 
-export { purge, getObjectProperty };
+function createCustomer(id: number, name: string): string {
+    return `${id} ${name}`;
+}
+
+export { createCustomer, purge, getObjectProperty };

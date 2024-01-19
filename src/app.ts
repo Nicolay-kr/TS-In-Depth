@@ -1,7 +1,8 @@
-import { purge, getObjectProperty } from './functions';
+import { purge, getObjectProperty, createCustomer } from './functions';
 import { Category } from './enums';
-import { Magazine } from './interfaces';
+import { Author, Magazine } from './interfaces';
 import { Shelf } from './clasees';
+import { AuthorWoEmail, BookRequiredFields, UpdatedBook, СreateCustomerFunctionType } from './types';
 // import { getObjectProperty } from './functions';
 
 showHello('greeting', 'TypeScript');
@@ -49,4 +50,30 @@ magazines.forEach(mag => magazineShelf.add(mag));
 //     return obj[key];
 // }
 
-getObjectProperty(magazines[0], 'title');
+// getObjectProperty(magazines[0], 'title');
+
+// Task 7.4
+
+const bookWithRequiredField: BookRequiredFields = {
+    id: 10,
+    title: 'The C Programming Language',
+    author: 'K & R',
+    available: true,
+    category: Category.Software,
+};
+
+const updatedBook: UpdatedBook = {
+    id: 10,
+    title: 'The C Programming Language',
+    available: true,
+    category: Category.Software,
+};
+
+const autor: AuthorWoEmail = {
+    email: 'some email',
+    name: 'Ivan. I',
+};
+
+const cusstomerParameters: Parameters<СreateCustomerFunctionType> = [2, 'Ivan'];
+
+console.log(createCustomer(...cusstomerParameters));
